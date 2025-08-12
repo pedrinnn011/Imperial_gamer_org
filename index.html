@@ -1,261 +1,191 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ORG IMPERIAL</title>
+  <title>Imperial Org</title>
   <style>
     body {
-      background-color: #2e1e5c;
-      color: #fff9db;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
+      background-color: #0a002e;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     header {
-      background: #ffd600;
-      padding: 20px;
+      background-color: #4b0082;
       text-align: center;
-      color: #2e1e5c;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      padding: 60px 20px;
     }
     header img {
-      height: 140px;
-      border-radius: 12px;
-    }
-    h1 {
-      margin: 10px 0 0 0;
-      font-weight: 700;
-    }
-    header p {
-      margin-top: 6px;
-      font-size: 1.1em;
-      font-weight: 600;
-    }
-    section {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    .ceo-links {
-      text-align: center;
-      margin: 20px 0 10px 0;
-    }
-    .ceo-btn {
-      display: inline-block;
-      margin: 8px 15px;
-      padding: 10px 22px;
-      font-size: 1.1em;
-      font-weight: bold;
-      color: #fff;
-      background-color: transparent;
-      border: 2px solid #ffd600;
-      border-radius: 10px;
-      text-decoration: none;
-      box-shadow: 0 0 10px #ffd600;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .ceo-btn:hover {
-      background-color: #ffd600;
-      color: #2e1e5c;
-      box-shadow: 0 0 20px #fff56a;
-    }
-    .social-links {
-      text-align: center;
-      margin: 10px 0 40px 0;
-    }
-    .social-btn {
-      display: inline-block;
-      margin: 8px 15px;
-      padding: 10px 22px;
-      font-size: 1.1em;
-      font-weight: bold;
-      color: #fff;
-      background-color: transparent;
-      border: 2px solid #ffd600;
-      border-radius: 10px;
-      text-decoration: none;
-      box-shadow: 0 0 10px #ffd600;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .social-btn:hover {
-      background-color: #ffd600;
-      color: #2e1e5c;
-      box-shadow: 0 0 20px #fff56a;
-    }
-    .card {
-      background: #3b2f72;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 0 10px rgba(255,214,0,0.3);
-    }
-    h2 {
-      color: #ffd600;
-      margin-bottom: 15px;
-      font-weight: 600;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    ul li {
-      margin-bottom: 8px;
-    }
-    label {
+      max-width: 400px;
+      width: 90%;
+      height: auto;
       display: block;
-      margin-top: 12px;
-      font-weight: 600;
+      margin: 0 auto;
     }
-    input[type="text"],
-    input[type="number"],
-    select {
+    nav {
+      background-color: #2c004d;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff8c00;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px 40px 20px;
+      line-height: 1.6;
+      font-size: 18px;
+      background-color: #1a0033;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #6a0dadaa;
+    }
+    main h2 {
+      color: #ff8c00;
+      margin-top: 0;
+    }
+    .link-x3 {
+      background-color: #ff8c00;
+      color: #0a002e;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px;
+      margin: 30px auto;
+      max-width: 400px;
+      border-radius: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: block;
+    }
+    .link-x3:hover {
+      background-color: #ffa733;
+    }
+    form {
+      margin-top: 40px;
+      background-color: #2a004b;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #ff8c00aa;
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #ff8c00;
+    }
+    form input, form select {
       width: 100%;
       padding: 10px;
-      border-radius: 6px;
-      border: none;
-      margin-top: 6px;
-      font-size: 1rem;
-    }
-    input[type="checkbox"] {
-      margin-right: 8px;
-      transform: scale(1.2);
-    }
-    button {
-      background-color: #ffd600;
-      color: #2e1e5c;
-      border: none;
+      margin-bottom: 20px;
       border-radius: 8px;
-      padding: 14px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      cursor: pointer;
-      margin-top: 15px;
-      width: 100%;
-      box-shadow: 0 4px 12px rgba(255,214,0,0.7);
+      border: none;
+      font-size: 16px;
     }
-    button:hover {
-      background-color: #e6c200;
-    }
-    .form-warning {
-      font-size: 0.95em;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      background-color: #fff3c4;
-      color: #2e1e5c;
-      padding: 10px 15px;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(255,214,0,0.5);
-    }
-    .whatsapp-link {
-      display: block;
-      text-align: center;
-      margin-top: 30px;
-    }
-    .whatsapp-link a {
-      background-color: #25D366;
-      color: #fff;
-      padding: 12px 24px;
+    form button {
+      background-color: #ff8c00;
+      color: #0a002e;
+      padding: 12px 25px;
+      border: none;
       border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+    form button:hover {
+      background-color: #ffa733;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #4b0082;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+    a.social-link {
+      color: #ff8c00;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 0 10px #25D366;
-      transition: background-color 0.3s ease;
     }
-    .whatsapp-link a:hover {
-      background-color: #1eb95a;
+    a.social-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="https://i.postimg.cc/6pqvQ8XY/logo-imperial.png" alt="Logo Imperial" />
-    <h1>ORG IMPERIAL</h1>
-    <p>CEOs da ORG IMPERIAL</p>
+    <img src="https://i.postimg.cc/CxjrHFHK/Lideran-a-imperial-20250809-144309.jpg" alt="Logo Imperial" />
   </header>
 
-  <section class="ceo-links">
-    <a href="https://www.instagram.com/imp_zangada" class="ceo-btn" target="_blank" rel="noopener noreferrer">IMP Zangada</a>
-    <a href="https://www.instagram.com/imp_afrodite" class="ceo-btn" target="_blank" rel="noopener noreferrer">IMP Afrodite</a>
-    <a href="https://www.instagram.com/imp_ravena" class="ceo-btn" target="_blank" rel="noopener noreferrer">IMP Ravena</a>
-  </section>
+  <nav>
+    <a href="#sobre">Sobre a Org</a>
+    <a href="#manto">Camisa Oficial</a>
+    <a href="#recrutamento">Recrutamento</a>
+    <a href="#contato">Contato</a>
+  </nav>
 
-  <section class="social-links">
-    <a href="https://www.instagram.com/imperial_ofcimp?igsh=MWhxbGdkZ3dmdWt3cA==" class="social-btn" target="_blank" rel="noopener noreferrer">Instagram Oficial</a>
-    <a href="https://www.tiktok.com/@imperial_impofc?_t=8qsv1G2vg17&_r=1" class="social-btn" target="_blank" rel="noopener noreferrer">TikTok Oficial</a>
-  </section>
+  <main>
+    <section id="sobre">
+      <h2>Sobre a Org Imperial</h2>
+      <p>A Org Imperial é uma organização focada no cenário competitivo e comunitário de jogos, unindo players em torno de uma identidade forte e um espírito de equipe. A Imperial oferece aos seus membros o “manto” — a camisa oficial da org, que representa orgulho e união entre os jogadores.</p>
+    </section>
 
-  <section>
-    <div class="card">
-      <h2>Regras</h2>
-      <ul>
-        <li>Respeitar todos os membros da guilda e adversários</li>
-        <li>Proibido usar cheats ou qualquer tipo de trapaça</li>
-        <li>Manter comportamento educado nos grupos e durante as partidas</li>
-        <li>Participar ativamente das guerras e eventos da guilda</li>
-        <li>Seguir as orientações dos líderes e vice-líderes</li>
-      </ul>
-    </div>
+    <a href="https://linkdoproupodextreino.com" target="_blank" rel="noopener" class="link-x3">
+      Esse link é o grupo de X-treino da nossa org.
+    </a>
 
-    <div class="card">
+    <section id="recrutamento">
       <h2>Formulário de Recrutamento</h2>
+      <form action="#" method="post">
+        <label for="nick">Nick</label>
+        <input type="text" id="nick" name="nick" placeholder="Seu nick no jogo" required />
 
-      <div class="form-warning">
-        Após o envio, analisaremos seu formulário e entraremos em contato com você o mais rápido possível.
-      </div>
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" name="idade" min="10" max="100" placeholder="Sua idade" required />
 
-      <form action="https://formsubmit.co/pedrocosta776622@gmail.com" method="POST">
-        <label>Nick:</label>
-        <input type="text" name="Nick" required />
-
-        <label>ID:</label>
-        <input type="number" name="ID" required />
-
-        <label>Idade:</label>
-        <input type="number" name="Idade" required />
-
-        <label>WhatsApp:</label>
-        <input type="number" name="WhatsApp" required />
-
-        <label>Patente BR e CS:</label>
-        <input type="text" name="Patente" required />
-
-        <label>Possui troca de Nick?</label>
-        <select name="Possui troca Nick?" required>
-          <option value="Sim">Sim</option>
-          <option value="Não">Não</option>
-          <option value="Talvez">Talvez</option>
+        <label for="patente">Selecione sua Patente</label>
+        <select id="patente" name="patente" required>
+          <option value="" disabled selected>Escolha uma opção</option>
+          <option value="guerra-de-guilda">Guerra de Guilda</option>
+          <option value="rank">Rank</option>
+          <option value="honras">Honras</option>
         </select>
 
-        <label>Consegue pegar mais de 7k de honras semanais?</label>
-        <select name="Pega 7k de honra?" required>
-          <option value="Sim">Sim</option>
-          <option value="Não">Não</option>
-        </select>
+        <label for="whatsapp">WhatsApp</label>
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="Número com DDD" required />
 
-        <label>Qual é o seu foco?</label><br/>
-        <input type="checkbox" name="Foco - Guerra de Guilda" value="Sim" /> Guerra de Guilda<br/>
-        <input type="checkbox" name="Foco - Honras Semanais" value="Sim" /> Honras Semanais<br/>
-        <input type="checkbox" name="Foco - Competitivo" value="Sim" /> Competitivo<br/>
-
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://imperialkids.com/obrigado" />
-
-        <button type="submit">Enviar Formulário</button>
+        <button type="submit">Enviar Cadastro</button>
       </form>
+    </section>
 
-      <div class="form-warning">
-        ⚠️ Se aparecer erro após clicar em "Enviar", não se preocupe — o formulário foi enviado corretamente. Esse erro é apenas visual.
-      </div>
+    <section id="manto" style="margin-top: 40px;">
+      <h2>Camisa Oficial da Imperial Gamer</h2>
+      <p>O manto oficial é a camisa que os membros da Imperial podem adquirir para mostrar sua representatividade e apoio à organização. Ela pode ser personalizada com seu nome nas costas, simbolizando o compromisso e a força da guilda.</p>
+    </section>
 
-      <div class="whatsapp-link">
-        <p>Prefere preencher o formulário pelo grupo de recrutamento?</p>
-        <a href="https://chat.whatsapp.com/IUK3th0Z3DvF6grHzjU6cS" target="_blank" rel="noopener noreferrer">Entrar no Grupo do WhatsApp</a>
-      </div>
-    </div>
-  </section>
+    <section id="contato" style="margin-top: 40px;">
+      <h2>Redes Sociais</h2>
+      <p>Siga a Imperial para ficar por dentro das novidades:</p>
+      <ul>
+        <li><a href="https://www.instagram.com/imperialoficial" target="_blank" rel="noopener" class="social-link">Instagram Oficial</a></li>
+      </ul>
+    </section>
+  </main>
 
+  <footer>
+    &copy; 2025 Org Imperial. Todos os direitos reservados.
+  </footer>
 </body>
 </html>
