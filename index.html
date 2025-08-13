@@ -3,189 +3,251 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Imperial Org</title>
+  <title>ORG IMPERIAL</title>
+  <meta name="theme-color" content="#4b0082">
   <style>
-    body {
-      margin: 0;
-      background-color: #0a002e;
-      color: white;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    :root{
+      --bg:#0b0614;
+      --card:#190d2b;
+      --card-2:#21113c;
+      --purple:#7a2cff;   /* roxo principal (detalhes) */
+      --purple-2:#9b5bff; /* roxo claro */
+      --text:#ffffff;
+      --muted:#d8cfff;
     }
-    header {
-      background-color: #4b0082;
-      text-align: center;
-      padding: 60px 20px;
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:inherit}
+    .wrap{max-width:1000px;margin:auto;padding:0 16px 60px}
+
+    /* Header */
+    header{
+      background: linear-gradient(180deg,#2a1350 0%, #190d2b 100%);
+      text-align:center;
+      padding:50px 16px 28px;
+      position:relative;
+      box-shadow:0 10px 40px rgba(122,44,255,.25) inset;
     }
-    header img {
-      max-width: 400px;
-      width: 90%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
+    header img{
+      max-width:460px; width:min(92%, 460px); height:auto; display:block; margin:0 auto 10px;
+      filter: drop-shadow(0 12px 32px rgba(122,44,255,.35));
     }
-    nav {
-      background-color: #2c004d;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
-      font-weight: bold;
-      font-size: 18px;
+    .cta-bar{
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:14px 0 0;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s;
+    .btn{
+      display:inline-block; text-decoration:none; font-weight:800;
+      padding:14px 18px; border-radius:14px; border:2px solid transparent;
+      background:var(--purple);
+      color:#0b0614; letter-spacing:.2px; box-shadow:0 6px 24px rgba(122,44,255,.35);
+      transition:transform .08s ease, box-shadow .2s ease, background .2s ease;
     }
-    nav a:hover {
-      color: #ff8c00;
+    .btn:hover{transform:translateY(-1px); box-shadow:0 10px 28px rgba(122,44,255,.45); background:var(--purple-2)}
+    .btn.outline{background:transparent;color:var(--text);border-color:var(--purple)}
+    .btn.outline:hover{background:rgba(122,44,255,.12)}
+
+    /* Nav */
+    nav{
+      position:sticky; top:0; z-index:9;
+      backdrop-filter: blur(6px);
+      background:rgba(15,10,25,.65);
+      border-bottom:1px solid rgba(122,44,255,.25);
     }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px 40px 20px;
-      line-height: 1.6;
-      font-size: 18px;
-      background-color: #1a0033;
-      border-radius: 15px;
-      box-shadow: 0 0 20px #6a0dadaa;
+    nav .wrap{display:flex; gap:18px; justify-content:center; padding:10px 16px}
+    nav a{padding:10px 12px; border-radius:10px; text-decoration:none; color:var(--muted); font-weight:700}
+    nav a:hover{background:rgba(122,44,255,.15); color:var(--text)}
+
+    /* Sections */
+    section{margin:38px 0 0}
+    .card{
+      background:linear-gradient(180deg,var(--card) 0%, var(--card-2) 100%);
+      border:1px solid rgba(122,44,255,.25);
+      border-radius:18px; padding:22px;
+      box-shadow:0 0 0 8px rgba(122,44,255,.06), 0 20px 40px rgba(0,0,0,.35);
     }
-    main h2 {
-      color: #ff8c00;
-      margin-top: 0;
+    h2{
+      margin:0 0 14px; font-size:28px; line-height:1.15;
+      color:var(--purple-2); text-shadow:0 0 22px rgba(122,44,255,.35);
     }
-    .link-x3 {
-      background-color: #ff8c00;
-      color: #0a002e;
-      font-weight: bold;
-      text-align: center;
-      padding: 15px;
-      margin: 30px auto;
-      max-width: 400px;
-      border-radius: 10px;
-      font-size: 20px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      text-decoration: none;
-      display: block;
+    p{color:var(--muted); margin:10px 0 0; line-height:1.6}
+
+    /* Banner X-treino */
+    .banner{
+      text-align:center; margin:26px auto 10px; max-width:820px;
     }
-    .link-x3:hover {
-      background-color: #ffa733;
+    .banner a{
+      display:block; text-decoration:none; padding:16px;
+      border-radius:16px; font-weight:900; letter-spacing:.2px;
+      background:var(--purple); color:#0b0614;
+      box-shadow:0 10px 28px rgba(122,44,255,.45);
     }
-    form {
-      margin-top: 40px;
-      background-color: #2a004b;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #ff8c00aa;
+    .banner a:hover{background:var(--purple-2)}
+
+    /* Grid links */
+    .grid{display:grid; gap:14px}
+    @media (min-width:700px){ .grid{grid-template-columns:repeat(2,1fr)} }
+
+    /* Form */
+    form{display:grid; gap:16px; margin-top:6px}
+    label{font-weight:800; color:var(--muted)}
+    input, select, textarea{
+      width:100%; padding:12px 14px; border-radius:12px; border:1px solid rgba(122,44,255,.35);
+      background:#120a22; color:var(--text); font-size:16px; outline:none;
+      box-shadow:inset 0 0 0 2px rgba(122,44,255,.08);
     }
-    form label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      color: #ff8c00;
-    }
-    form input, form select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      border: none;
-      font-size: 16px;
-    }
-    form button {
-      background-color: #ff8c00;
-      color: #0a002e;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 18px;
-      transition: background-color 0.3s;
-    }
-    form button:hover {
-      background-color: #ffa733;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #4b0082;
-      font-size: 14px;
-      margin-top: 60px;
-    }
-    a.social-link {
-      color: #ff8c00;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a.social-link:hover {
-      text-decoration: underline;
+    input:focus, select:focus, textarea:focus{box-shadow:0 0 0 3px rgba(122,44,255,.35), inset 0 0 0 2px rgba(122,44,255,.2)}
+    .checklist{display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:-6px}
+    .checklist label{display:flex; align-items:center; gap:8px; font-weight:700}
+    .checklist input[type="checkbox"]{width:18px; height:18px; accent-color:var(--purple)}
+
+    .submit{margin-top:8px; display:flex; gap:12px; flex-wrap:wrap}
+    .note{font-size:13px; color:#bfb2ff}
+
+    footer{
+      text-align:center; padding:28px 16px; color:#bfb2ff;
+      border-top:1px solid rgba(122,44,255,.25); margin-top:40px
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <img src="https://i.postimg.cc/CxjrHFHK/Lideran-a-imperial-20250809-144309.jpg" alt="Logo Imperial" />
+    <img src="https://i.postimg.cc/CxjrHFHK/Lideran-a-imperial-20250809-144309.jpg" alt="Logo ORG Imperial">
+    <div class="cta-bar">
+      <a class="btn" href="https://www.instagram.com/imperial_ofcimp?igsh=MTk5YmQ1cDhtaHB0ZQ==" target="_blank" rel="noopener">Instagram Oficial</a>
+      <a class="btn outline" href="https://tiktok.com/@imperial.gamer.of?_t=ZM-8whrpcC6wgK&_r=1" target="_blank" rel="noopener">TikTok Oficial</a>
+    </div>
   </header>
 
+  <!-- NAV -->
   <nav>
-    <a href="#sobre">Sobre a Org</a>
-    <a href="#manto">Camisa Oficial</a>
-    <a href="#recrutamento">Recrutamento</a>
-    <a href="#contato">Contato</a>
+    <div class="wrap">
+      <a href="#sobre">Sobre</a>
+      <a href="#links">Links</a>
+      <a href="#xtr">X-Treino</a>
+      <a href="#recrutamento">Recrutamento</a>
+      <a href="#manto">Manto</a>
+    </div>
   </nav>
 
-  <main>
-    <section id="sobre">
-      <h2>Sobre a Org Imperial</h2>
-      <p>A Org Imperial é uma organização focada no cenário competitivo e comunitário de jogos, unindo players em torno de uma identidade forte e um espírito de equipe. A Imperial oferece aos seus membros o “manto” — a camisa oficial da org, que representa orgulho e união entre os jogadores.</p>
+  <div class="wrap">
+
+    <!-- SOBRE -->
+    <section id="sobre" class="card">
+      <h2>Sobre a ORG Imperial</h2>
+      <p>A ORG IMPERIAL atua no cenário competitivo e comunitário, com foco em evolução, disciplina e união. Aqui você encontra estrutura para treinar, competir e crescer no jogo, além do nosso manto oficial para representar a família Imperial.</p>
     </section>
 
-    <a href="https://linkdoproupodextreino.com" target="_blank" rel="noopener" class="link-x3">
-      Esse link é o grupo de X-treino da nossa org.
-    </a>
+    <!-- BANNER X-TREINO -->
+    <div class="banner">
+      <a href="https://chat.whatsapp.com/GLvvqZLnOpx4u2882RregA" target="_blank" rel="noopener">
+        Esse link é o grupo de X-treino da nossa org.
+      </a>
+    </div>
 
-    <section id="recrutamento">
+    <!-- LINKS IMPORTANTES -->
+    <section id="links" class="card">
+      <h2>Links Importantes</h2>
+      <div class="grid">
+        <a class="btn" href="https://chat.whatsapp.com/E81wly4OLqt1P80Fz0IURZ?mode=ac_c" target="_blank" rel="noopener">Recrutamento</a>
+        <a class="btn" href="https://chat.whatsapp.com/KBTmb313Yz9FzwcUxcxWyv?mode=ac_t" target="_blank" rel="noopener">Recrutamento Competitivo</a>
+        <a class="btn" href="https://chat.whatsapp.com/GLvvqZLnOpx4u2882RregA" target="_blank" rel="noopener">X-Treino Imperial</a>
+        <a class="btn" href="https://fluzpdesign.com/produtos/imperial/" target="_blank" rel="noopener">Manto Oficial</a>
+      </div>
+    </section>
+
+    <!-- X-TREINO -->
+    <section id="xtr" class="card">
+      <h2>Sistema de X-Treino (X3)</h2>
+      <p>Nosso X-treino reúne jogadores da Imperial para treinos organizados, com horários definidos, análise de desempenho e foco em:</p>
+      <ul>
+        <li>Rotina de treinos semanais e scrims;</li>
+        <li>Comunicação e disciplina em call;</li>
+        <li>Evolução individual e coletiva.</li>
+      </ul>
+      <p>Entre no grupo de X-treino pelo botão acima e siga as orientações fixadas.</p>
+    </section>
+
+    <!-- FORMULÁRIO -->
+    <section id="recrutamento" class="card">
       <h2>Formulário de Recrutamento</h2>
+
       <form action="#" method="post">
-        <label for="nick">Nick</label>
-        <input type="text" id="nick" name="nick" placeholder="Seu nick no jogo" required />
+        <div>
+          <label for="nick">Nick</label>
+          <input type="text" id="nick" name="nick" placeholder="Seu nick no jogo" required>
+        </div>
 
-        <label for="idade">Idade</label>
-        <input type="number" id="idade" name="idade" min="10" max="100" placeholder="Sua idade" required />
+        <div>
+          <label for="idjogador">ID</label>
+          <input type="text" id="idjogador" name="idjogador" placeholder="Seu ID no jogo" required>
+        </div>
 
-        <label for="patente">Selecione sua Patente</label>
-        <select id="patente" name="patente" required>
-          <option value="" disabled selected>Escolha uma opção</option>
-          <option value="guerra-de-guilda">Guerra de Guilda</option>
-          <option value="rank">Rank</option>
-          <option value="honras">Honras</option>
-        </select>
+        <div>
+          <label for="idade">Idade</label>
+          <input type="number" id="idade" name="idade" min="10" max="100" placeholder="Sua idade" required>
+        </div>
 
-        <label for="whatsapp">WhatsApp</label>
-        <input type="tel" id="whatsapp" name="whatsapp" placeholder="Número com DDD" required />
+        <div>
+          <label for="whats">WhatsApp</label>
+          <input type="tel" id="whats" name="whats" placeholder="DDD + número" required>
+        </div>
 
-        <button type="submit">Enviar Cadastro</button>
+        <div>
+          <label for="patentes">Patente BR e CS</label>
+          <input type="text" id="patentes" name="patentes" placeholder="Ex: Mestre 1 (BR) | Ouro (CS)">
+        </div>
+
+        <div>
+          <label for="trocanick">Possui troca de Nick?</label>
+          <select id="trocanick" name="trocanick" required>
+            <option value="" disabled selected>Escolha uma opção</option>
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="seteK">Consegue pegar mais de 7k de honras semanais?</label>
+          <select id="seteK" name="seteK" required>
+            <option value="" disabled selected>Escolha uma opção</option>
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Foco principal</label>
+          <div class="checklist">
+            <label><input type="checkbox" name="foco" value="guerra"> Guerra de Guilda</label>
+            <label><input type="checkbox" name="foco" value="rank"> Rank</label>
+            <label><input type="checkbox" name="foco" value="honras"> Honras</label>
+          </div>
+          <p class="note">Você pode marcar mais de um foco.</p>
+        </div>
+
+        <div class="submit">
+          <button type="submit" class="btn">Enviar Formulário</button>
+          <a class="btn outline" href="https://chat.whatsapp.com/E81wly4OLqt1P80Fz0IURZ?mode=ac_c" target="_blank" rel="noopener">Entrar no grupo de Recrutamento</a>
+        </div>
+
+        <p class="note">* Para envio automático, posso integrar este formulário ao seu WhatsApp/Google Forms quando você quiser.</p>
       </form>
     </section>
 
-    <section id="manto" style="margin-top: 40px;">
-      <h2>Camisa Oficial da Imperial Gamer</h2>
-      <p>O manto oficial é a camisa que os membros da Imperial podem adquirir para mostrar sua representatividade e apoio à organização. Ela pode ser personalizada com seu nome nas costas, simbolizando o compromisso e a força da guilda.</p>
+    <!-- MANTO -->
+    <section id="manto" class="card">
+      <h2>Camisa Oficial (Manto Imperial)</h2>
+      <p>Garanta seu manto oficial e personalize com seu nome nas costas. Representa a identidade, união e força da Imperial.</p>
+      <p><a class="btn" href="https://fluzpdesign.com/produtos/imperial/" target="_blank" rel="noopener">Comprar Manto Oficial</a></p>
     </section>
 
-    <section id="contato" style="margin-top: 40px;">
-      <h2>Redes Sociais</h2>
-      <p>Siga a Imperial para ficar por dentro das novidades:</p>
-      <ul>
-        <li><a href="https://www.instagram.com/imperialoficial" target="_blank" rel="noopener" class="social-link">Instagram Oficial</a></li>
-      </ul>
-    </section>
-  </main>
+  </div>
 
   <footer>
-    &copy; 2025 Org Imperial. Todos os direitos reservados.
+    © 2025 ORG IMPERIAL — Todos os direitos reservados •
+    <a href="https://www.instagram.com/imperial_ofcimp?igsh=MTk5YmQ1cDhtaHB0ZQ==" target="_blank" rel="noopener">Instagram</a>
   </footer>
 </body>
-</html>
+            </html>
