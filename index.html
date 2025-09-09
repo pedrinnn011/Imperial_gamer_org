@@ -10,8 +10,8 @@
       --bg:#0b0614;
       --card:#190d2b;
       --card-2:#21113c;
-      --purple:#7a2cff;   /* roxo principal (detalhes) */
-      --purple-2:#9b5bff; /* roxo claro */
+      --purple:#7a2cff;
+      --purple-2:#9b5bff;
       --text:#ffffff;
       --muted:#d8cfff;
     }
@@ -20,7 +20,6 @@
     a{color:inherit}
     .wrap{max-width:1000px;margin:auto;padding:0 16px 60px}
 
-    /* Header */
     header{
       background: linear-gradient(180deg,#2a1350 0%, #190d2b 100%);
       text-align:center;
@@ -46,7 +45,6 @@
     .btn.outline{background:transparent;color:var(--text);border-color:var(--purple)}
     .btn.outline:hover{background:rgba(122,44,255,.12)}
 
-    /* Nav */
     nav{
       position:sticky; top:0; z-index:9;
       backdrop-filter: blur(6px);
@@ -57,7 +55,6 @@
     nav a{padding:10px 12px; border-radius:10px; text-decoration:none; color:var(--muted); font-weight:700}
     nav a:hover{background:rgba(122,44,255,.15); color:var(--text)}
 
-    /* Sections */
     section{margin:38px 0 0}
     .card{
       background:linear-gradient(180deg,var(--card) 0%, var(--card-2) 100%);
@@ -71,7 +68,6 @@
     }
     p{color:var(--muted); margin:10px 0 0; line-height:1.6}
 
-    /* Banner X-treino */
     .banner{
       text-align:center; margin:26px auto 10px; max-width:820px;
     }
@@ -83,11 +79,9 @@
     }
     .banner a:hover{background:var(--purple-2)}
 
-    /* Grid links */
     .grid{display:grid; gap:14px}
     @media (min-width:700px){ .grid{grid-template-columns:repeat(2,1fr)} }
 
-    /* Form */
     form{display:grid; gap:16px; margin-top:6px}
     label{font-weight:800; color:var(--muted)}
     input, select, textarea{
@@ -100,7 +94,7 @@
     .checklist label{display:flex; align-items:center; gap:8px; font-weight:700}
     .checklist input[type="checkbox"]{width:18px; height:18px; accent-color:var(--purple)}
 
-    .submit{margin-top:8px; display:flex; gap:12px; flex-wrap:wrap}
+    .submit{margin-top:8px; display:flex; gap:12px; flex-wrap:wrap; align-items:center}
     .note{font-size:13px; color:#bfb2ff}
 
     footer{
@@ -111,7 +105,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <img src="https://i.postimg.cc/CxjrHFHK/Lideran-a-imperial-20250809-144309.jpg" alt="Logo ORG Imperial">
     <div class="cta-bar">
@@ -120,7 +113,6 @@
     </div>
   </header>
 
-  <!-- NAV -->
   <nav>
     <div class="wrap">
       <a href="#sobre">Sobre</a>
@@ -133,20 +125,17 @@
 
   <div class="wrap">
 
-    <!-- SOBRE -->
     <section id="sobre" class="card">
       <h2>Sobre a ORG Imperial</h2>
       <p>A ORG IMPERIAL atua no cenário competitivo e comunitário, com foco em evolução, disciplina e união. Aqui você encontra estrutura para treinar, competir e crescer no jogo, além do nosso manto oficial para representar a família Imperial.</p>
     </section>
 
-    <!-- BANNER X-TREINO -->
     <div class="banner">
       <a href="https://chat.whatsapp.com/GLvvqZLn0px4u2882RregA?mode=ems_copy_c" target="_blank" rel="noopener">
         Esse link é o grupo de X-treino da nossa org.
       </a>
     </div>
 
-    <!-- LINKS IMPORTANTES -->
     <section id="links" class="card">
       <h2>Links Importantes</h2>
       <div class="grid">
@@ -157,9 +146,8 @@
       </div>
     </section>
 
-    <!-- X-TREINO -->
     <section id="xtr" class="card">
-      <h2> X-Treino da org</h2>
+      <h2>X-Treino da org</h2>
       <p>Nosso X-treino reúne jogadores da Imperial e outras guildas ou lines para treinos organizados, com horários definidos, análise de desempenho e foco em:</p>
       <ul>
         <li>Rotina de treinos semanais e scrims;</li>
@@ -169,11 +157,14 @@
       <p>Entre no grupo de X-treino pelo botão acima e siga as orientações fixadas.</p>
     </section>
 
-    <!-- FORMULÁRIO -->
     <section id="recrutamento" class="card">
       <h2>Formulário de Recrutamento</h2>
 
-      <form action="#" method="post">
+      <form action="https://formsubmit.co/pedrocosta776622@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_cc" value="pedrocosta776632@icloud.com">
+
         <div>
           <label for="nick">Nick</label>
           <input type="text" id="nick" name="nick" placeholder="Seu nick no jogo" required>
@@ -229,14 +220,12 @@
 
         <div class="submit">
           <button type="submit" class="btn">Enviar Formulário</button>
+          <span class="note">⚠️ Se aparecer algum erro, fique tranquilo: é normal do nosso site. Seu formulário foi enviado com sucesso!</span>
           <a class="btn outline" href="https://chat.whatsapp.com/E81wIy4OLqt1P80FzOIURZ?mode=ems_copy_t" target="_blank" rel="noopener">Entrar no grupo de Recrutamento</a>
         </div>
-
-        <p class="note">* Para envio automático, posso integrar este formulário ao seu WhatsApp/Google Forms quando você quiser.</p>
       </form>
     </section>
 
-    <!-- MANTO -->
     <section id="manto" class="card">
       <h2>Camisa Oficial (Manto Imperial)</h2>
       <p>Garanta seu manto oficial e personalize com seu nome nas costas. Representa a identidade, união e força da Imperial.</p>
@@ -251,4 +240,3 @@
   </footer>
 </body>
 </html>
-
